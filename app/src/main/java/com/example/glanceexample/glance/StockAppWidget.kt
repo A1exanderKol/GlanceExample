@@ -3,6 +3,8 @@ package com.example.glanceexample.glance
 import android.content.Context
 import androidx.glance.text.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
