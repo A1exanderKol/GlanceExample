@@ -80,13 +80,25 @@ class StockAppWidget : GlanceAppWidget() {
     }
 
     @Composable
+    private fun Small(stateCount: Float) {
+        Column(modifier = GlanceModifier
+            .fillMaxSize()
+            .background(GlanceTheme.colors.background)
+            .padding(8.dp)) {
+            StockDisplay(stateCount)
+        }
+    }
+
+    @Composable
     fun GlanceContent() {
         Column(modifier = GlanceModifier
                 .fillMaxSize()
                 .background(GlanceTheme.colors.background)
                 .padding(8.dp)
         ) {
-            Text("Demo")
+            val stateCount by PriceDataRepo.currentPrice.collectAsState()
+            Small(stateCount)
         }
     }
+
 }
